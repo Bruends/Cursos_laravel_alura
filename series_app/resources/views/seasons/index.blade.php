@@ -2,9 +2,11 @@
     <ul class="list-group">
         @foreach ($seasons as $season)
             <li class="list-group-item d-flex justify-content-between align-items-center">
-                Temporada: {{$season->number}} <br>
+                <a href="{{route('episodes.index', $season->id)}}">
+                    Temporada: {{$season->number}} <br>
+                </a>
                 <span class="badge bg-primary">
-                    {{sizeOf($season->episodes)}}
+                    {{ $season->watchedEps()}} / {{ sizeOf($season->episodes) }}
                 </span>
             </li>
         @endforeach
