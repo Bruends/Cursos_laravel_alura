@@ -8,6 +8,12 @@
     @vite(['resources/scss/app.scss', 'resources/js/app.js'])
 </head>
 <body class="container">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid px-4 py-2">
+            <a class="navbar-brand" href="{{ route('series.index') }}">Home</a>
+            <a href="{{route('logout')}}">logout</a>
+        </div>
+    </nav>
     @if ($errors->any())
         <div class="alert alert-danger">
             <ul>
